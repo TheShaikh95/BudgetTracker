@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/icons/favicon.png">
+    <link rel="apple-touch-icon" href="icons/logo_192x192.png">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <title>Budget Tracker</title>
+</head>
+
+<body class="bg-light">
+
+    <div id="custom-navbar" class="fixed-top shadow d-flex justify-content-between align-items-center">
+        <div class="ml-5">
+            <a href="/"><img height="100" src="icons/logo.png"></a>
+        </div>
+        <div class="mr-5 p-2 text-white font-weight-bold bg-success rounded">
+            $<span id="nav-currency-value">0</span>
+        </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br>
+    <div id="page-content-container">
+        <div id="offline-alert" class="d-none alert alert-danger" role="alert">
+            You are offline
+        </div>
+        <div id="online-alert" class="d-none alert alert-success" role="alert">
+            You are online
+        </div>
+        <div class="d-flex justify-content-around">
+            <button type="button" class="btn btn-info pl-5 pr-5 pt-2 pb-2" data-toggle="collapse"
+                data-target="#formButtonDeposit" aria-expanded="false"
+                aria-controls="formButtonDeposit">Deposit</button>
+            <button type="button" class="btn btn-primary pl-5 pr-5 pt-2 pb-2" data-toggle="collapse"
+                data-target="#formButtonWithdraw" aria-expanded="false"
+                aria-controls="formButtonWithdraw">Withdraw</button>
+        </div><br>
+        <div class="collapse" id="formButtonDeposit">
+            <form id="depositForm">
+                <input type="text" id="depositName" name="depositName" class="form-control"
+                    placeholder="Name of deposit" required><br>
+                <input type="number" id="depositAmount" name="depositAmount" class="form-control" min="1"
+                    placeholder="Amount to deposit" required><br>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" id="deposit-btn" class="btn btn-success">Deposit</button>
+                </div>
+            </form>
+        </div>
+        <div class="collapse" id="formButtonWithdraw">
+            <form id="withdrawForm">
+                <input type="text" id="withdrawName" name="withdrawName" class="form-control"
+                    placeholder="Name of withdraw" required><br>
+                <input type="number" id="withdrawAmount" name="withdrawAmount" class="form-control" min="1"
+                    placeholder="Amount to withdraw" required><br>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" id="withdraw-btn" class="btn btn-success">Withdraw</button>
+                </div>
+            </form>
+        </div>
+        <hr>
+        <div id="transaction-content" class="mt-5">
+
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="index.js"></script>
+    <script src="/registerWorker.js"></script>
+</body>
+
+</html>

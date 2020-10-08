@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #custom-navbar {
+    background-color: #385b66;
+  }
+  
+  #page-content-container {
+    width: 500px;
+    margin: auto;
+  }
